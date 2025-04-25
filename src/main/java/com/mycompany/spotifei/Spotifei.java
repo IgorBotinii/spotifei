@@ -4,10 +4,6 @@
 
 package com.mycompany.spotifei;
 
-/**
- *
- * @author igorb
- */
 public class Spotifei {
 
     public static void main(String[] args) {
