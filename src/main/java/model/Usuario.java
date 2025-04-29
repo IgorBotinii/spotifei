@@ -1,13 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
-/**
- *
- * @author igorb
- */
 public class Usuario {
-    
+    private String nomeUsuario;
+    private String senhaUsuario;
+    private String nomeCompleto;
+
+    public Usuario(String nomeUsuario, String senhaUsuario, String nomeCompleto) {
+        this.nomeUsuario = nomeUsuario;
+        this.senhaUsuario = senhaUsuario;
+        this.nomeCompleto = nomeCompleto;
+    }
+
+    public String getNomeUsuario() {
+        return nomeUsuario;
+    }
+
+    public String getSenhaUsuario() {
+        return senhaUsuario;
+    }
+
+    public String getNomeCompleto() {
+        return nomeCompleto;
+    }
 }

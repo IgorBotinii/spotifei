@@ -76,6 +76,11 @@ public class TelaCadNovUser extends javax.swing.JFrame {
         BotGravar_cad.setBackground(new java.awt.Color(0, 204, 51));
         BotGravar_cad.setForeground(new java.awt.Color(255, 255, 255));
         BotGravar_cad.setText("Gravar");
+        BotGravar_cad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotGravar_cadActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -144,6 +149,24 @@ public class TelaCadNovUser extends javax.swing.JFrame {
     private void BoxSenhaUser_cadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxSenhaUser_cadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BoxSenhaUser_cadActionPerformed
+
+    private void BotGravar_cadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotGravar_cadActionPerformed
+ // 1. Captura os dados dos campos
+String nomeUsuario = BoxUser_cad.getText();
+String senhaUsuario = BoxSenhaUser_cad.getText();
+String nomeCompleto = BoxNomeUserComp_cad.getText();
+
+// 2. Cria o objeto Usuario
+model.Usuario novoUsuario = new model.Usuario(nomeUsuario, senhaUsuario, nomeCompleto);
+
+// 3. Chama o DAO para inserir no banco
+DAO.CadNovoUser dao = new DAO.CadNovoUser();
+dao.inserirUsuario(novoUsuario);
+
+// 4. (Opcional) Limpa os campos ou mostra confirmação
+javax.swing.JOptionPane.showMessageDialog(this, "Usuário cadastrado com sucesso!");
+
+    }//GEN-LAST:event_BotGravar_cadActionPerformed
 
     /**
      * @param args the command line arguments
