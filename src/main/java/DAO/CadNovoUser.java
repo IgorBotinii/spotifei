@@ -10,7 +10,7 @@ public class CadNovoUser {
     public void inserirUsuario(Usuario user) {
         String sql = "INSERT INTO cd_usuarios (nome_user, senha_user, nome_comp_user) VALUES (?, ?, ?)";
 
-        try (Connection conn = ConectarDB.conectar();
+        try (Connection conn = ConectarDB   .conectar();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, user.getNomeUsuario());
