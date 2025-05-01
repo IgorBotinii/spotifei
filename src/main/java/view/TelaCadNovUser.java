@@ -151,20 +151,24 @@ public class TelaCadNovUser extends javax.swing.JFrame {
     }//GEN-LAST:event_BoxSenhaUser_cadActionPerformed
 
     private void BotGravar_cadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotGravar_cadActionPerformed
- // 1. Captura os dados dos campos
-String nomeUsuario = BoxUser_cad.getText();
-String senhaUsuario = BoxSenhaUser_cad.getText();
-String nomeCompleto = BoxNomeUserComp_cad.getText();
 
-// 2. Cria o objeto Usuario
-model.Usuario novoUsuario = new model.Usuario(nomeUsuario, senhaUsuario, nomeCompleto);
+        String nomeUsuario = BoxUser_cad.getText();
+        String senhaUsuario = BoxSenhaUser_cad.getText();
+        String nomeCompleto = BoxNomeUserComp_cad.getText();
 
-// 3. Chama o DAO para inserir no banco
-DAO.CadNovoUser dao = new DAO.CadNovoUser();
-dao.inserirUsuario(novoUsuario);
+        model.Usuario novoUsuario = new model.Usuario(nomeUsuario, senhaUsuario, nomeCompleto);
 
-// 4. (Opcional) Limpa os campos ou mostra confirmação
-javax.swing.JOptionPane.showMessageDialog(this, "Usuário cadastrado com sucesso!");
+        DAO.CadNovoUser dao = new DAO.CadNovoUser();
+        dao.inserirUsuario(novoUsuario);
+
+        javax.swing.JOptionPane.showMessageDialog(this, "Usuário cadastrado com sucesso!");
+        
+        // Abre a tela de login
+        TelaLogin telaLogin = new TelaLogin();
+        telaLogin.setVisible(true);
+
+        // Fecha a tela 
+        this.dispose();
 
     }//GEN-LAST:event_BotGravar_cadActionPerformed
 
