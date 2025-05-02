@@ -19,7 +19,7 @@ public TelaAlbum() {
     
     
     MusicaDao dao = new MusicaDao();
-    dao.carregarMusicas(tabelaMusicas); // nome real da sua JTable
+    dao.carregarMusicas(tabelaMusicas);
 
 }
 
@@ -185,7 +185,15 @@ public TelaAlbum() {
     }//GEN-LAST:event_BoxGenero_ftActionPerformed
 
     private void BotaoBuscar_ftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscar_ftActionPerformed
+        //Buscar nos filtdos
+        String nome = BoxNomeMusica_ft.getText();
+        String artista = BoxArtista_ft.getText();
+        String genero = BoxGenero_ft.getText();
 
+        MusicaDao dao = new MusicaDao();
+        dao.filtrarMusicas(tabelaMusicas, nome, artista, genero);
+
+        
 
     }//GEN-LAST:event_BotaoBuscar_ftActionPerformed
 
