@@ -7,7 +7,7 @@ import java.sql.Connection;
 public class MusicaDao {
 
     public void carregarMusicas(JTable tabela) {
-        String sql = "SELECT * FROM alb_musicas";
+        String sql = "SELECT * FROM cd_musicas";
 
         try (Connection conn = ConectarDB.conectar();
              PreparedStatement stmt = conn.prepareStatement(sql);
@@ -39,7 +39,7 @@ public class MusicaDao {
     //SCRIPT PARA FILTRAR OS ITENS NA TABELA DEM MUSICAS CADASTRADAS
     
     public void filtrarMusicas(JTable tabela, String nome, String artista, String genero) {
-    String sql = "SELECT * FROM alb_musicas " +
+    String sql = "SELECT * FROM cd_musicas " +
                  "WHERE nome_musica ILIKE ? AND artista ILIKE ? AND genero ILIKE ?";
 
     try (Connection conn = ConectarDB.conectar();
