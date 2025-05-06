@@ -46,10 +46,12 @@ public TelaAlbum() {
         jLabel3 = new javax.swing.JLabel();
         BotaoBuscar_ft = new javax.swing.JButton();
         BotaoBuscar_ft1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
         tabelaMusicas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -109,13 +111,18 @@ public TelaAlbum() {
             }
         });
 
+        jLabel4.setBackground(new java.awt.Color(0, 102, 255));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Lista de Musicas");
+        jLabel4.setOpaque(true);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(BoxNomeMusica_ft, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -132,12 +139,14 @@ public TelaAlbum() {
                         .addComponent(BotaoBuscar_ft)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(BotaoBuscar_ft1)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -155,7 +164,7 @@ public TelaAlbum() {
                             .addComponent(BotaoBuscar_ft)
                             .addComponent(BotaoBuscar_ft1))))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -166,23 +175,15 @@ public TelaAlbum() {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BoxNomeMusica_ftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxNomeMusica_ftActionPerformed
+    private void BotaoBuscar_ft1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscar_ft1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BoxNomeMusica_ftActionPerformed
-
-    private void BoxArtista_ftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxArtista_ftActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BoxArtista_ftActionPerformed
-
-    private void BoxGenero_ftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxGenero_ftActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BoxGenero_ftActionPerformed
+    }//GEN-LAST:event_BotaoBuscar_ft1ActionPerformed
 
     private void BotaoBuscar_ftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscar_ftActionPerformed
         //Buscar nos filtdos
@@ -193,13 +194,19 @@ public TelaAlbum() {
         MusicaDao dao = new MusicaDao();
         dao.filtrarMusicas(tabelaMusicas, nome, artista, genero);
 
-        
-
     }//GEN-LAST:event_BotaoBuscar_ftActionPerformed
 
-    private void BotaoBuscar_ft1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscar_ft1ActionPerformed
+    private void BoxGenero_ftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxGenero_ftActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoBuscar_ft1ActionPerformed
+    }//GEN-LAST:event_BoxGenero_ftActionPerformed
+
+    private void BoxArtista_ftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxArtista_ftActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BoxArtista_ftActionPerformed
+
+    private void BoxNomeMusica_ftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxNomeMusica_ftActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BoxNomeMusica_ftActionPerformed
 
     /**
      * @param args the command line arguments
@@ -246,6 +253,7 @@ public TelaAlbum() {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabelaMusicas;
