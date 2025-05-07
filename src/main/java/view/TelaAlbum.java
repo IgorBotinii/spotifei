@@ -31,6 +31,7 @@ public TelaAlbum() {
 
                 // Abrindo a tela de detalhes preenchida
                 DetalhesMusicas detalhes = new DetalhesMusicas(nome, artista, genero, tempo, data);
+                detalhes.setLocationRelativeTo(null);
                 detalhes.setVisible(true);
             }
         }
@@ -65,7 +66,7 @@ public TelaAlbum() {
         BoxGenero_ft = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         BotaoBuscar_ft = new javax.swing.JButton();
-        BotaoBuscar_ft1 = new javax.swing.JButton();
+        BotaoVoltar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -122,12 +123,12 @@ public TelaAlbum() {
             }
         });
 
-        BotaoBuscar_ft1.setBackground(new java.awt.Color(255, 51, 51));
-        BotaoBuscar_ft1.setForeground(new java.awt.Color(255, 255, 255));
-        BotaoBuscar_ft1.setText("Voltar");
-        BotaoBuscar_ft1.addActionListener(new java.awt.event.ActionListener() {
+        BotaoVoltar.setBackground(new java.awt.Color(255, 51, 51));
+        BotaoVoltar.setForeground(new java.awt.Color(255, 255, 255));
+        BotaoVoltar.setText("Voltar");
+        BotaoVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoBuscar_ft1ActionPerformed(evt);
+                BotaoVoltarActionPerformed(evt);
             }
         });
 
@@ -158,7 +159,7 @@ public TelaAlbum() {
                         .addGap(18, 18, 18)
                         .addComponent(BotaoBuscar_ft)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(BotaoBuscar_ft1)))
+                        .addComponent(BotaoVoltar)))
                 .addContainerGap(17, Short.MAX_VALUE))
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -182,7 +183,7 @@ public TelaAlbum() {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BoxGenero_ft, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BotaoBuscar_ft)
-                            .addComponent(BotaoBuscar_ft1))))
+                            .addComponent(BotaoVoltar))))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE))
         );
@@ -201,9 +202,13 @@ public TelaAlbum() {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BotaoBuscar_ft1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscar_ft1ActionPerformed
+    private void BotaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoVoltarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoBuscar_ft1ActionPerformed
+        dispose();
+        TelaInicial telainicio = new TelaInicial();
+        telainicio.setLocationRelativeTo(null);
+        telainicio.setVisible(true);
+    }//GEN-LAST:event_BotaoVoltarActionPerformed
 
     private void BotaoBuscar_ftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscar_ftActionPerformed
         //Buscar nos filtdos
@@ -266,7 +271,7 @@ public TelaAlbum() {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoBuscar_ft;
-    private javax.swing.JButton BotaoBuscar_ft1;
+    private javax.swing.JButton BotaoVoltar;
     private javax.swing.JTextField BoxArtista_ft;
     private javax.swing.JTextField BoxGenero_ft;
     private javax.swing.JTextField BoxNomeMusica_ft;

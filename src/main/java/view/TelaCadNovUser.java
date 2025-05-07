@@ -165,6 +165,7 @@ public class TelaCadNovUser extends javax.swing.JFrame {
         
         // Abre a tela de login
         TelaLogin telaLogin = new TelaLogin();
+        telaLogin.setLocationRelativeTo(null);
         telaLogin.setVisible(true);
 
         // Fecha a tela 

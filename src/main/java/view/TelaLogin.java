@@ -141,6 +141,7 @@ public class TelaLogin extends javax.swing.JFrame {
     private void BotaoPrimeiroAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoPrimeiroAcessoActionPerformed
 
         TelaCadNovUser CadNovoUsuario = new TelaCadNovUser();
+        CadNovoUsuario.setLocationRelativeTo(null);
         CadNovoUsuario.setVisible(true);
         dispose();
 
@@ -161,6 +162,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 dispose();
 
         TelaInicial inicial = new TelaInicial();
+        inicial.setLocationRelativeTo(null);
         inicial.setVisible(true);
 
         } else {
