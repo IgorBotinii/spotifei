@@ -15,7 +15,19 @@ public class DetalhesMusicas extends javax.swing.JFrame {
      */
     public DetalhesMusicas() {
         initComponents();
+        
     }
+    
+    public DetalhesMusicas(String nome, String artista, String genero, String tempo, String data) {
+    initComponents(); 
+
+    BoxNomeMusica_info.setText(nome);
+    BoxNomeArtista_info.setText(artista);
+    BoxGenero_info.setText(genero);
+    BoxDataTempoMusica_info.setText(tempo);
+    BoxDataLancamento_info.setText(data);
+}
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -157,6 +169,7 @@ public class DetalhesMusicas extends javax.swing.JFrame {
 
     private void BotaoBuscar_ft1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscar_ft1ActionPerformed
         // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_BotaoBuscar_ft1ActionPerformed
 
     /**

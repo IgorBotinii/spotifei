@@ -17,14 +17,34 @@ public class TelaAlbum extends javax.swing.JFrame {
 public TelaAlbum() {
     initComponents();
     
+    tabelaMusicas.addMouseListener(new java.awt.event.MouseAdapter() {
+    public void mouseClicked(java.awt.event.MouseEvent evt) {
+        if (evt.getClickCount() == 1) { // Clique duplo
+            int linha = tabelaMusicas.getSelectedRow();
+            if (linha >= 0) {
+                // Pegando dados da tabela
+                String nome = tabelaMusicas.getValueAt(linha, 1).toString();
+                String artista = tabelaMusicas.getValueAt(linha, 2).toString();
+                String genero = tabelaMusicas.getValueAt(linha, 3).toString();
+                String tempo = tabelaMusicas.getValueAt(linha, 4).toString();
+                String data = tabelaMusicas.getValueAt(linha, 5).toString();
+
+                // Abrindo a tela de detalhes preenchida
+                DetalhesMusicas detalhes = new DetalhesMusicas(nome, artista, genero, tempo, data);
+                detalhes.setVisible(true);
+            }
+        }
+    }
+});
+
+    
     
     MusicaDao dao = new MusicaDao();
     dao.carregarMusicas(tabelaMusicas);
+    
+
 
 }
-
-
-
 
     /**
      * This method is called from within the constructor to initialize the form.

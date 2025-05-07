@@ -18,13 +18,17 @@ public class MusicaDao {
             modelo.addColumn("Nome da Música");
             modelo.addColumn("Artista");
             modelo.addColumn("Gênero");
+            modelo.addColumn("Tempo");
+            modelo.addColumn("Data");
 
             while (rs.next()) {
                 modelo.addRow(new Object[]{
                     rs.getInt("cod_musica"),
                     rs.getString("nome_musica"),
                     rs.getString("artista"),
-                    rs.getString("genero")
+                    rs.getString("genero"),
+                    rs.getString("tempo_total_musica"),
+                    rs.getDate("data_lancamento").toString()
                 });
             }
 
