@@ -127,6 +127,11 @@ public class TelaLogin extends javax.swing.JFrame {
         DAO.FazerLogin dao = new DAO.FazerLogin();
 if (dao.LoginUsuario(usuario, senha)) {
 javax.swing.JOptionPane.showMessageDialog(this, "Login realizado com sucesso!");
+        dispose();
+
+TelaInicial inicial = new TelaInicial();
+inicial.setVisible(true);
+
 } else {
 javax.swing.JOptionPane.showMessageDialog(this, "Usuário ou Senha incorretos!");
 }

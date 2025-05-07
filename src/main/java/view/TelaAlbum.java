@@ -19,7 +19,7 @@ public TelaAlbum() {
     
     tabelaMusicas.addMouseListener(new java.awt.event.MouseAdapter() {
     public void mouseClicked(java.awt.event.MouseEvent evt) {
-        if (evt.getClickCount() == 1) { // Clique duplo
+        if (evt.getClickCount() == 1) { 
             int linha = tabelaMusicas.getSelectedRow();
             if (linha >= 0) {
                 // Pegando dados da tabela
