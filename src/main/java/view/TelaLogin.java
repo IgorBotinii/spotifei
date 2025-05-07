@@ -27,18 +27,16 @@ public class TelaLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         BoxUser_login = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         BoxSenha_login = new javax.swing.JTextField();
+        BotaoPrimeiroAcesso = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         BotaoEntrar_login = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Usuario");
 
         BoxUser_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,6 +53,20 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
+        BotaoPrimeiroAcesso.setBackground(new java.awt.Color(0, 0, 0));
+        BotaoPrimeiroAcesso.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        BotaoPrimeiroAcesso.setForeground(new java.awt.Color(255, 255, 255));
+        BotaoPrimeiroAcesso.setText("Primeiro Acesso? Clique Aqui");
+        BotaoPrimeiroAcesso.setBorder(null);
+        BotaoPrimeiroAcesso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoPrimeiroAcessoActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Usuario");
+
         BotaoEntrar_login.setBackground(new java.awt.Color(0, 204, 51));
         BotaoEntrar_login.setForeground(new java.awt.Color(255, 255, 255));
         BotaoEntrar_login.setText("Entrar");
@@ -69,33 +81,39 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(BoxUser_login, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(BoxSenha_login, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
-                        .addComponent(BotaoEntrar_login, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(BoxUser_login, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(BoxSenha_login, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addContainerGap(26, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(BotaoPrimeiroAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(72, 72, 72))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(BotaoEntrar_login, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(111, 111, 111))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(52, 52, 52)
-                .addComponent(jLabel1)
+                .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BoxUser_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BoxSenha_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(BotaoEntrar_login, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
+                .addGap(18, 18, 18)
+                .addComponent(BotaoPrimeiroAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -120,25 +138,34 @@ public class TelaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BoxSenha_loginActionPerformed
 
-    private void BotaoEntrar_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoEntrar_loginActionPerformed
-    String usuario = BoxUser_login.getText();
-    String senha = BoxSenha_login.getText();
+    private void BotaoPrimeiroAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoPrimeiroAcessoActionPerformed
 
-        DAO.FazerLogin dao = new DAO.FazerLogin();
-if (dao.LoginUsuario(usuario, senha)) {
-javax.swing.JOptionPane.showMessageDialog(this, "Login realizado com sucesso!");
+        TelaCadNovUser CadNovoUsuario = new TelaCadNovUser();
+        CadNovoUsuario.setVisible(true);
         dispose();
 
-TelaInicial inicial = new TelaInicial();
-inicial.setVisible(true);
 
-} else {
-javax.swing.JOptionPane.showMessageDialog(this, "Usuário ou Senha incorretos!");
-}
-        
         
         
        
+    }//GEN-LAST:event_BotaoPrimeiroAcessoActionPerformed
+
+    private void BotaoEntrar_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoEntrar_loginActionPerformed
+        // TODO add your handling code here:
+        
+            String usuario = BoxUser_login.getText();
+            String senha = BoxSenha_login.getText();
+                DAO.FazerLogin dao = new DAO.FazerLogin();
+        if (dao.LoginUsuario(usuario, senha)) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Login realizado com sucesso!");
+                dispose();
+
+        TelaInicial inicial = new TelaInicial();
+        inicial.setVisible(true);
+
+        } else {
+        javax.swing.JOptionPane.showMessageDialog(this, "Usuário ou Senha incorretos!");
+        }
     }//GEN-LAST:event_BotaoEntrar_loginActionPerformed
 
     /**
@@ -178,10 +205,11 @@ javax.swing.JOptionPane.showMessageDialog(this, "Usuário ou Senha incorretos!")
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoEntrar_login;
+    private javax.swing.JButton BotaoPrimeiroAcesso;
     private javax.swing.JTextField BoxSenha_login;
     private javax.swing.JTextField BoxUser_login;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
