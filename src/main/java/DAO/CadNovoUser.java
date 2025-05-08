@@ -13,12 +13,12 @@ public class CadNovoUser {
         try (Connection conn = ConectarDB.conectar();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            stmt.setString(1, user.getNomeUsuario());
-            stmt.setString(2, user.getSenhaUsuario());
-            stmt.setString(3, user.getNomeCompleto());
+        stmt.setString(1, user.getNomeUsuario());
+        stmt.setString(2, user.getSenhaUsuario());
+        stmt.setString(3, user.getNomeCompleto());
 
-            stmt.executeUpdate();   
-            System.out.println("Usuário inserido com sucesso!");
+        stmt.executeUpdate();   
+        System.out.println("Usuário inserido com sucesso!");
 
         } catch (SQLException e) {
             System.err.println("Erro ao inserir usuário:");

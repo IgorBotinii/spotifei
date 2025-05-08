@@ -26,7 +26,11 @@ public class DetalhesMusicas extends javax.swing.JFrame {
     BoxGenero_info.setText(genero);
     BoxDataTempoMusica_info.setText(tempo);
     BoxDataLancamento_info.setText(data);
+    
 }
+ 
+
+    
 
 
     /**
@@ -51,6 +55,8 @@ public class DetalhesMusicas extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         BotaoBuscar_ft1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        BotaoCurtirMusica = new javax.swing.JButton();
+        BotaoBuscar_ft3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,39 +92,62 @@ public class DetalhesMusicas extends javax.swing.JFrame {
         jLabel6.setText("Informações da musica");
         jLabel6.setOpaque(true);
 
+        BotaoCurtirMusica.setBackground(new java.awt.Color(0, 204, 0));
+        BotaoCurtirMusica.setForeground(new java.awt.Color(255, 255, 255));
+        BotaoCurtirMusica.setText("Curtir Musica");
+        BotaoCurtirMusica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoCurtirMusicaActionPerformed(evt);
+            }
+        });
+
+        BotaoBuscar_ft3.setBackground(new java.awt.Color(0, 204, 0));
+        BotaoBuscar_ft3.setForeground(new java.awt.Color(255, 255, 255));
+        BotaoBuscar_ft3.setText("Adicionar na Playlist");
+        BotaoBuscar_ft3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoBuscar_ft3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BotaoBuscar_ft1)
-                .addGap(14, 14, 14))
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BoxNomeMusica_info, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BoxNomeArtista_info, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BotaoCurtirMusica)
+                        .addGap(18, 18, 18)
+                        .addComponent(BotaoBuscar_ft3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BotaoBuscar_ft1)
+                        .addGap(14, 14, 14))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BoxGenero_info, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BoxDataLancamento_info, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(BoxDataTempoMusica_info)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BoxNomeMusica_info, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BoxNomeArtista_info, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BoxGenero_info, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BoxDataLancamento_info, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(BoxDataTempoMusica_info)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,7 +178,10 @@ public class DetalhesMusicas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BoxDataTempoMusica_info, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(BotaoBuscar_ft1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotaoBuscar_ft1)
+                    .addComponent(BotaoCurtirMusica)
+                    .addComponent(BotaoBuscar_ft3))
                 .addContainerGap())
         );
 
@@ -171,6 +203,25 @@ public class DetalhesMusicas extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_BotaoBuscar_ft1ActionPerformed
+
+    private void BotaoCurtirMusicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCurtirMusicaActionPerformed
+        // TODO add your handling code here:
+    String nome = BoxNomeMusica_info.getText();
+    String artista = BoxNomeArtista_info.getText();
+    String genero = BoxGenero_info.getText();
+    String data = BoxDataLancamento_info.getText();
+    String tempo = BoxDataTempoMusica_info.getText();
+
+    model.LkMusic musica = new model.LkMusic(nome, artista, genero, data, tempo);
+
+    DAO.CurtirMusica dao = new DAO.CurtirMusica();
+    dao.curtirMusicaSave(musica);
+
+    }//GEN-LAST:event_BotaoCurtirMusicaActionPerformed
+
+    private void BotaoBuscar_ft3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscar_ft3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoBuscar_ft3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,6 +260,8 @@ public class DetalhesMusicas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoBuscar_ft1;
+    private javax.swing.JButton BotaoBuscar_ft3;
+    private javax.swing.JButton BotaoCurtirMusica;
     private javax.swing.JTextField BoxDataLancamento_info;
     private javax.swing.JTextField BoxDataTempoMusica_info;
     private javax.swing.JTextField BoxGenero_info;
