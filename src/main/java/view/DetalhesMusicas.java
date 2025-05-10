@@ -17,10 +17,12 @@ public class DetalhesMusicas extends javax.swing.JFrame {
         initComponents();
         
     }
-    
+        private MusicasCurtidas telaPrincipal;
+
     public DetalhesMusicas(String nome, String artista, String genero, String tempo, String data) {
     initComponents(); 
     
+    this.telaPrincipal = telaPrincipal;
 
     BoxNomeMusica_info.setText(nome);
     BoxNomeArtista_info.setText(artista);
@@ -217,6 +219,8 @@ public class DetalhesMusicas extends javax.swing.JFrame {
 
     DAO.CurtirMusica dao = new DAO.CurtirMusica();
     dao.curtirMusicaSave(musica);
+    telaPrincipal.carregarTabelaMusicasCurtidas();  
+
 
     }//GEN-LAST:event_BotaoCurtirMusicaActionPerformed
 

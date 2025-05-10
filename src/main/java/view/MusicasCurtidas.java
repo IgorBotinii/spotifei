@@ -232,7 +232,10 @@ public class MusicasCurtidas extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoBuscar_ft_musicasCurtidasActionPerformed
 
     private void BotaoVoltar_MusicasCurtidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoVoltar_MusicasCurtidasActionPerformed
-
+         TelaInicial telaInit = new TelaInicial();
+        telaInit.setLocationRelativeTo(null);
+        telaInit.setVisible(true);
+        dispose();
     }//GEN-LAST:event_BotaoVoltar_MusicasCurtidasActionPerformed
 
     /**

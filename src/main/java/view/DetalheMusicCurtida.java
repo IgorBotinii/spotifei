@@ -47,7 +47,7 @@ public DetalheMusicCurtida(){
         BoxNomeMusica_info_lk = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         BoxNomeArtista_info_lk = new javax.swing.JTextField();
-        BotaoBuscar_ft1 = new javax.swing.JButton();
+        BotaVoltarDtMusicCurtida = new javax.swing.JButton();
         BotaoDescurtirMusica = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,12 +66,12 @@ public DetalheMusicCurtida(){
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Artista");
 
-        BotaoBuscar_ft1.setBackground(new java.awt.Color(255, 51, 51));
-        BotaoBuscar_ft1.setForeground(new java.awt.Color(255, 255, 255));
-        BotaoBuscar_ft1.setText("Voltar");
-        BotaoBuscar_ft1.addActionListener(new java.awt.event.ActionListener() {
+        BotaVoltarDtMusicCurtida.setBackground(new java.awt.Color(255, 51, 51));
+        BotaVoltarDtMusicCurtida.setForeground(new java.awt.Color(255, 255, 255));
+        BotaVoltarDtMusicCurtida.setText("Voltar");
+        BotaVoltarDtMusicCurtida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoBuscar_ft1ActionPerformed(evt);
+                BotaVoltarDtMusicCurtidaActionPerformed(evt);
             }
         });
 
@@ -96,7 +96,7 @@ public DetalheMusicCurtida(){
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(BotaoDescurtirMusica)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BotaoBuscar_ft1)
+                        .addComponent(BotaVoltarDtMusicCurtida)
                         .addGap(14, 14, 14))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,7 +124,7 @@ public DetalheMusicCurtida(){
                         .addComponent(BoxNomeMusica_info_lk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotaoBuscar_ft1)
+                    .addComponent(BotaVoltarDtMusicCurtida)
                     .addComponent(BotaoDescurtirMusica))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -143,10 +143,11 @@ public DetalheMusicCurtida(){
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BotaoBuscar_ft1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscar_ft1ActionPerformed
+    private void BotaVoltarDtMusicCurtidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaVoltarDtMusicCurtidaActionPerformed
         // TODO add your handling code here:
+        
         dispose();
-    }//GEN-LAST:event_BotaoBuscar_ft1ActionPerformed
+    }//GEN-LAST:event_BotaVoltarDtMusicCurtidaActionPerformed
 
     private void BotaoDescurtirMusicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoDescurtirMusicaActionPerformed
         // TODO add your handling code here:
@@ -159,7 +160,9 @@ public DetalheMusicCurtida(){
             
            DescurtirMusica dao = new DescurtirMusica();
            dao.descurtirMusicaCL(musica);
-           telaPrincipal.carregarTabelaMusicasCurtidas();    
+           telaPrincipal.carregarTabelaMusicasCurtidas();  
+           dispose();
+
 
     }//GEN-LAST:event_BotaoDescurtirMusicaActionPerformed
 
@@ -199,7 +202,7 @@ public DetalheMusicCurtida(){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotaoBuscar_ft1;
+    private javax.swing.JButton BotaVoltarDtMusicCurtida;
     private javax.swing.JButton BotaoDescurtirMusica;
     private javax.swing.JTextField BoxNomeArtista_info_lk;
     private javax.swing.JTextField BoxNomeMusica_info_lk;
