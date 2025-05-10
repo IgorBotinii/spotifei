@@ -10,11 +10,11 @@ import javax.swing.JOptionPane;
 public class CurtirMusica {
 
     public void curtirMusicaSave(LkMusic musicaCurtida) {
-        String verificaSql = "SELECT 1 FROM cd_musicas_curtidas WHERE nome_musica = ? AND artista = ?";
+        String VerMusicCurtida = "SELECT 1 FROM cd_musicas_curtidas WHERE nome_musica = ? AND artista = ?";
         String insertSql = "INSERT INTO cd_musicas_curtidas (nome_musica, artista, genero, tempo_total_musica, data_lancamento) VALUES (?, ?, ?, ?, ?)";
 
         try (Connection conn = ConectarDB.conectar();
-             PreparedStatement verificaStmt = conn.prepareStatement(verificaSql)) {
+             PreparedStatement verificaStmt = conn.prepareStatement(VerMusicCurtida)) {
 
             verificaStmt.setString(1, musicaCurtida.getNomeMusica());
             verificaStmt.setString(2, musicaCurtida.getNomeArtista());

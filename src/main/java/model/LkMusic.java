@@ -32,4 +32,15 @@ public class LkMusic {
     public String getTempoTotMusica() {
         return tempototmusica;
     }
+    
+    public void setNomeMusica(String nomeMusica){
+    this.NomeMusica = nomeMusica;
+    }
+    
+    public void setArtista(String artista){
+    this.Artista = artista;
+    }
+    
+    
+    
 }

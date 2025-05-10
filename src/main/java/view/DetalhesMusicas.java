@@ -20,6 +20,7 @@ public class DetalhesMusicas extends javax.swing.JFrame {
     
     public DetalhesMusicas(String nome, String artista, String genero, String tempo, String data) {
     initComponents(); 
+    
 
     BoxNomeMusica_info.setText(nome);
     BoxNomeArtista_info.setText(artista);
