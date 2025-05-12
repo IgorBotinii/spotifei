@@ -9,26 +9,14 @@ package model;
  * @author igorb
  */
 public class Playlist {
-    private int id;
     private String nome;
 
     // Construtores
     public Playlist() {}
 
-    public Playlist(int id, String nome) {
-        this.id = id;
+    public Playlist(String nome) {
         this.nome = nome;
     }
-
-    // Getters e Setters
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNome() {
         return nome;
     }
