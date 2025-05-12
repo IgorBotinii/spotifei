@@ -137,6 +137,11 @@ public class CriarPlaylist extends javax.swing.JFrame {
 
     private void BotCancel_cadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotCancel_cadActionPerformed
         // TODO add your handling code here:
+        
+        TelaPlaylistsGerais telpss = new TelaPlaylistsGerais();
+        telpss.setLocationRelativeTo(null);
+        telpss.setVisible(true);
+
     }//GEN-LAST:event_BotCancel_cadActionPerformed
 
     /**
