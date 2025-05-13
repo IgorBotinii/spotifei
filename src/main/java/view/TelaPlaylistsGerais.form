@@ -52,11 +52,11 @@
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="BoxNomeMusica_ft2" min="-2" pref="276" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="BotaoBuscar_ft" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="BotaoVoltar" min="-2" max="-2" attributes="0"/>
+                          <Component id="BoxNomePlaylist" min="-2" pref="276" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                          <Component id="BotaoBuscaPlaylist" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="BotaoVoltarPlaylist" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="16" max="32767" attributes="0"/>
                           <Component id="BotaoNovaPlaylist" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -72,9 +72,9 @@
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="BoxNomeMusica_ft2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="BotaoBuscar_ft" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="BotaoVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BoxNomePlaylist" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BotaoBuscaPlaylist" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BotaoVoltarPlaylist" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="BotaoNovaPlaylist" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -91,21 +91,18 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable1">
+            <Component class="javax.swing.JTable" name="TabelaListaDePlaylists">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="4" rowCount="4">
-                    <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                  <Table columnCount="1" rowCount="4">
+                    <Column editable="true" title="Nome da Playlist" type="java.lang.Object"/>
                   </Table>
                 </Property>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="BotaoBuscar_ft">
+        <Component class="javax.swing.JButton" name="BotaoBuscaPlaylist">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="cc" red="0" type="rgb"/>
@@ -116,10 +113,10 @@
             <Property name="text" type="java.lang.String" value="Buscar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoBuscar_ftActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoBuscaPlaylistActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="BotaoVoltar">
+        <Component class="javax.swing.JButton" name="BotaoVoltarPlaylist">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -130,7 +127,7 @@
             <Property name="text" type="java.lang.String" value="Voltar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoVoltarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoVoltarPlaylistActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -141,9 +138,9 @@
             <Property name="text" type="java.lang.String" value="Nome da Playlists"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="BoxNomeMusica_ft2">
+        <Component class="javax.swing.JTextField" name="BoxNomePlaylist">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BoxNomeMusica_ft2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BoxNomePlaylistActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BotaoNovaPlaylist">

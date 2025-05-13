@@ -4,6 +4,8 @@
  */
 package view;
 
+import DAO.ListaPlaylist;
+
 /**
  *
  * @author igorb
@@ -15,6 +17,9 @@ public class TelaPlaylistsGerais extends javax.swing.JFrame {
      */
     public TelaPlaylistsGerais() {
         initComponents();
+        
+        ListaPlaylist dao = new ListaPlaylist();
+        dao.CarregarListaPlaylists(TabelaListaDePlaylists);
     }
 
     /**
@@ -28,54 +33,54 @@ public class TelaPlaylistsGerais extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        BotaoBuscar_ft = new javax.swing.JButton();
-        BotaoVoltar = new javax.swing.JButton();
+        TabelaListaDePlaylists = new javax.swing.JTable();
+        BotaoBuscaPlaylist = new javax.swing.JButton();
+        BotaoVoltarPlaylist = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        BoxNomeMusica_ft2 = new javax.swing.JTextField();
+        BoxNomePlaylist = new javax.swing.JTextField();
         BotaoNovaPlaylist = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TabelaListaDePlaylists.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null},
+                {null},
+                {null},
+                {null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nome da Playlist"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TabelaListaDePlaylists);
 
-        BotaoBuscar_ft.setBackground(new java.awt.Color(0, 204, 51));
-        BotaoBuscar_ft.setForeground(new java.awt.Color(255, 255, 255));
-        BotaoBuscar_ft.setText("Buscar");
-        BotaoBuscar_ft.addActionListener(new java.awt.event.ActionListener() {
+        BotaoBuscaPlaylist.setBackground(new java.awt.Color(0, 204, 51));
+        BotaoBuscaPlaylist.setForeground(new java.awt.Color(255, 255, 255));
+        BotaoBuscaPlaylist.setText("Buscar");
+        BotaoBuscaPlaylist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoBuscar_ftActionPerformed(evt);
+                BotaoBuscaPlaylistActionPerformed(evt);
             }
         });
 
-        BotaoVoltar.setBackground(new java.awt.Color(255, 51, 51));
-        BotaoVoltar.setForeground(new java.awt.Color(255, 255, 255));
-        BotaoVoltar.setText("Voltar");
-        BotaoVoltar.addActionListener(new java.awt.event.ActionListener() {
+        BotaoVoltarPlaylist.setBackground(new java.awt.Color(255, 51, 51));
+        BotaoVoltarPlaylist.setForeground(new java.awt.Color(255, 255, 255));
+        BotaoVoltarPlaylist.setText("Voltar");
+        BotaoVoltarPlaylist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoVoltarActionPerformed(evt);
+                BotaoVoltarPlaylistActionPerformed(evt);
             }
         });
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nome da Playlists");
 
-        BoxNomeMusica_ft2.addActionListener(new java.awt.event.ActionListener() {
+        BoxNomePlaylist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BoxNomeMusica_ft2ActionPerformed(evt);
+                BoxNomePlaylistActionPerformed(evt);
             }
         });
 
@@ -100,11 +105,11 @@ public class TelaPlaylistsGerais extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(BoxNomeMusica_ft2, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BotaoBuscar_ft)
-                        .addGap(18, 18, 18)
-                        .addComponent(BotaoVoltar)
+                        .addComponent(BoxNomePlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(BotaoBuscaPlaylist)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BotaoVoltarPlaylist)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                         .addComponent(BotaoNovaPlaylist)))
                 .addContainerGap())
@@ -116,9 +121,9 @@ public class TelaPlaylistsGerais extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BoxNomeMusica_ft2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotaoBuscar_ft)
-                    .addComponent(BotaoVoltar)
+                    .addComponent(BoxNomePlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotaoBuscaPlaylist)
+                    .addComponent(BotaoVoltarPlaylist)
                     .addComponent(BotaoNovaPlaylist))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -138,12 +143,12 @@ public class TelaPlaylistsGerais extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BotaoBuscar_ftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscar_ftActionPerformed
+    private void BotaoBuscaPlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscaPlaylistActionPerformed
         //Buscar nos filtdos
         
-    }//GEN-LAST:event_BotaoBuscar_ftActionPerformed
+    }//GEN-LAST:event_BotaoBuscaPlaylistActionPerformed
 
-    private void BotaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoVoltarActionPerformed
+    private void BotaoVoltarPlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoVoltarPlaylistActionPerformed
         // TODO add your handling code here:
         
         TelaInicial telainit = new TelaInicial();
@@ -151,11 +156,11 @@ public class TelaPlaylistsGerais extends javax.swing.JFrame {
         telainit.setLocationRelativeTo(null);
         dispose();
    
-    }//GEN-LAST:event_BotaoVoltarActionPerformed
+    }//GEN-LAST:event_BotaoVoltarPlaylistActionPerformed
 
-    private void BoxNomeMusica_ft2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxNomeMusica_ft2ActionPerformed
+    private void BoxNomePlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxNomePlaylistActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BoxNomeMusica_ft2ActionPerformed
+    }//GEN-LAST:event_BoxNomePlaylistActionPerformed
 
     private void BotaoNovaPlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNovaPlaylistActionPerformed
         // TODO add your handling code here:
@@ -203,19 +208,13 @@ public class TelaPlaylistsGerais extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotaoBuscar_ft;
+    private javax.swing.JButton BotaoBuscaPlaylist;
     private javax.swing.JButton BotaoNovaPlaylist;
-    private javax.swing.JButton BotaoVoltar;
-    private javax.swing.JTextField BoxNomeMusica_ft;
-    private javax.swing.JTextField BoxNomeMusica_ft1;
-    private javax.swing.JTextField BoxNomeMusica_ft2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton BotaoVoltarPlaylist;
+    private javax.swing.JTextField BoxNomePlaylist;
+    private javax.swing.JTable TabelaListaDePlaylists;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable tabelaMusicas;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,7 @@
 package view;
 
 import DAO.Criarplclss;
+import DAO.ListaPlaylist;
 import model.Playlist;
 
 /**
@@ -18,6 +19,8 @@ public class CriarPlaylist extends javax.swing.JFrame {
      */
     public CriarPlaylist() {
         initComponents();
+        
+        
     }
 
     /**
@@ -131,6 +134,10 @@ public class CriarPlaylist extends javax.swing.JFrame {
     Criarplclss dao = new Criarplclss();            
     dao.inserirPlaylist(novaPlaylist);  
       javax.swing.JOptionPane.showMessageDialog(null, "Playlist criada com sucesso!");
+      
+      
+      
+
 
   
     }//GEN-LAST:event_BotGravar_cadActionPerformed
@@ -141,6 +148,7 @@ public class CriarPlaylist extends javax.swing.JFrame {
         TelaPlaylistsGerais telpss = new TelaPlaylistsGerais();
         telpss.setLocationRelativeTo(null);
         telpss.setVisible(true);
+
 
     }//GEN-LAST:event_BotCancel_cadActionPerformed
 
