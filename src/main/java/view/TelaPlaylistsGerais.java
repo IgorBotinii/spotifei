@@ -20,6 +20,23 @@ public class TelaPlaylistsGerais extends javax.swing.JFrame {
         
         ListaPlaylist dao = new ListaPlaylist();
         dao.CarregarListaPlaylists(TabelaListaDePlaylists);
+        
+        TabelaListaDePlaylists.addMouseListener(new java.awt.event.MouseAdapter() {
+    @Override
+    public void mouseClicked(java.awt.event.MouseEvent evt) {
+        int linha = TabelaListaDePlaylists.getSelectedRow();
+        if (linha >= 0) {
+            String nomePlaylist = TabelaListaDePlaylists.getValueAt(linha, 0).toString();
+
+            TelaColocarMusicaPlaylist tela = new TelaColocarMusicaPlaylist(nomePlaylist);
+            tela.setLocationRelativeTo(null);
+            tela.setVisible(true);
+
+            dispose(); // Fecha esta tela
+        }
+    }
+});
+
     }
 
     /**

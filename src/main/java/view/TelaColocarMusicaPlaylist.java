@@ -10,35 +10,50 @@ package view;
  */
 
 import DAO.AddNovMusicPlaylistSelect;
+import DAO.ExcluirMusicaPlaylist;
 import DAO.ListaMusicasPlaylistSelect;
 import DAO.MusicaDao;
 import java.awt.event.ActionEvent;
 public class TelaColocarMusicaPlaylist extends javax.swing.JFrame {
-    
-   
-    /**
-     * Creates new form TelaColocarMusicaPlaylist
-     */
-    public TelaColocarMusicaPlaylist() {
-        initComponents();
-         String nomePlaylistSelecionada = BoxPlayListSelecionada.getText();
-         ListaMusicasPlaylistSelect lista = new ListaMusicasPlaylistSelect();
-         lista.CarregarMusicasPlaylistSelect(TabelaMusicasPlaylist, nomePlaylistSelecionada);
 
-     TabelaMusicasBD.addMouseListener(new java.awt.event.MouseAdapter() {
-    @Override
-    public void mouseClicked(java.awt.event.MouseEvent evt) {
-        int linha = TabelaMusicasBD.getSelectedRow();
+public TelaColocarMusicaPlaylist(String nomePlaylist) {
+    
+    initComponents();
+    
+    
+
+    BoxPlayListSelecionada.setText(nomePlaylist);
+    String nomePlayListSelecionada = nomePlaylist;
+
+    ListaMusicasPlaylistSelect lista = new ListaMusicasPlaylistSelect();
+    lista.CarregarMusicasPlaylistSelect(TabelaMusicasPlaylist, nomePlayListSelecionada);
+
+    TabelaMusicasBD.addMouseListener(new java.awt.event.MouseAdapter() {
+        @Override
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            int linha = TabelaMusicasBD.getSelectedRow();
             String nome = TabelaMusicasBD.getValueAt(linha, 1).toString();
             BoxMusicaSelecionada.setText(nome);
-    }
-});
+        }
+    });
+
+    TabelaMusicasPlaylist.addMouseListener(new java.awt.event.MouseAdapter() {
+        @Override
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            int linha = TabelaMusicasPlaylist.getSelectedRow();
+            String nome_musica = TabelaMusicasPlaylist.getValueAt(linha, 0).toString();
+            BoxMusicaSelecionada.setText(nome_musica);
+        }
+    });
 
     MusicaDao dao = new MusicaDao();
     dao.carregarMusicas(TabelaMusicasBD);
-    
+}
+public TelaColocarMusicaPlaylist() {
+    initComponents();
+}
 
-    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -107,7 +122,7 @@ public class TelaColocarMusicaPlaylist extends javax.swing.JFrame {
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 204));
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("                                                          Musicas salvas na playlist");
+        jLabel3.setText("                                                       Musicas salvas na playlist");
         jLabel3.setOpaque(true);
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -125,6 +140,11 @@ public class TelaColocarMusicaPlaylist extends javax.swing.JFrame {
         BotaoCancelAddPll.setBackground(new java.awt.Color(255, 0, 51));
         BotaoCancelAddPll.setForeground(new java.awt.Color(255, 255, 255));
         BotaoCancelAddPll.setText("Cancelar");
+        BotaoCancelAddPll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoCancelAddPllActionPerformed(evt);
+            }
+        });
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Playlist Selecionada:");
@@ -132,6 +152,11 @@ public class TelaColocarMusicaPlaylist extends javax.swing.JFrame {
         BotaoRemoverPlaylist.setBackground(new java.awt.Color(255, 153, 0));
         BotaoRemoverPlaylist.setForeground(new java.awt.Color(255, 255, 255));
         BotaoRemoverPlaylist.setText("Remover da Playlist");
+        BotaoRemoverPlaylist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoRemoverPlaylistActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -227,6 +252,30 @@ public class TelaColocarMusicaPlaylist extends javax.swing.JFrame {
 
     }//GEN-LAST:event_BotaoAdicionarMusicaPlaylistActionPerformed
 
+    private void BotaoRemoverPlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoRemoverPlaylistActionPerformed
+        // TODO add your handling code here:
+        String playlist = BoxPlayListSelecionada.getText();
+        String musica = BoxMusicaSelecionada.getText();
+
+        // Remove do banco
+        ExcluirMusicaPlaylist dao = new ExcluirMusicaPlaylist();
+        dao.ExcluirMscPll(playlist, musica);
+
+        // Atualiza a tabela de músicas da playlist
+        ListaMusicasPlaylistSelect lista = new ListaMusicasPlaylistSelect();
+        lista.CarregarMusicasPlaylistSelect(TabelaMusicasPlaylist, playlist);
+
+    }//GEN-LAST:event_BotaoRemoverPlaylistActionPerformed
+
+    private void BotaoCancelAddPllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCancelAddPllActionPerformed
+        // TODO add your handling code here:
+        TelaPlaylistsGerais telapllg = new TelaPlaylistsGerais();
+        telapllg.setLocationRelativeTo(null);
+        telapllg.setVisible(true);
+        dispose();
+        
+    }//GEN-LAST:event_BotaoCancelAddPllActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -257,7 +306,8 @@ public class TelaColocarMusicaPlaylist extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaColocarMusicaPlaylist().setVisible(true);
+               new TelaColocarMusicaPlaylist().setVisible(true);
+
             }
         });
     }
