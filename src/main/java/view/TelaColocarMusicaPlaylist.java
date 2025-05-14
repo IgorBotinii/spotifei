@@ -11,6 +11,7 @@ package view;
 
 import DAO.AddNovMusicPlaylistSelect;
 import DAO.ExcluirMusicaPlaylist;
+import DAO.InserirHistorico;
 import DAO.ListaMusicasPlaylistSelect;
 import DAO.MusicaDao;
 import java.awt.event.ActionEvent;
@@ -249,6 +250,9 @@ public TelaColocarMusicaPlaylist() {
 
         ListaMusicasPlaylistSelect lista = new ListaMusicasPlaylistSelect();
         lista.CarregarMusicasPlaylistSelect(TabelaMusicasPlaylist, playlist);
+        
+       InserirHistorico.registrarAcao("Adicionou a musica: " + musica + " na playlist: " + playlist);
+
 
     }//GEN-LAST:event_BotaoAdicionarMusicaPlaylistActionPerformed
 
@@ -264,6 +268,8 @@ public TelaColocarMusicaPlaylist() {
         // Atualiza a tabela de músicas da playlist
         ListaMusicasPlaylistSelect lista = new ListaMusicasPlaylistSelect();
         lista.CarregarMusicasPlaylistSelect(TabelaMusicasPlaylist, playlist);
+        
+          InserirHistorico.registrarAcao("Removeu da playlist: " + playlist + " a musica: " + musica);
 
     }//GEN-LAST:event_BotaoRemoverPlaylistActionPerformed
 

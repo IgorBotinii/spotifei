@@ -4,6 +4,8 @@
  */
 package view;
 
+import DAO.InserirHistorico;
+
 /**
  *
  * @author igorb
@@ -204,9 +206,13 @@ public class DetalhesMusicas extends javax.swing.JFrame {
 
     model.LkMusic musica = new model.LkMusic(nome, artista, genero, data, tempo);
 
+       InserirHistorico.registrarAcao("Curtiu a musica: " + nome);
     DAO.CurtirMusica dao = new DAO.CurtirMusica();
     dao.curtirMusicaSave(musica);
     telaPrincipal.carregarTabelaMusicasCurtidas();  
+    
+ 
+
 
 
     }//GEN-LAST:event_BotaoCurtirMusicaActionPerformed

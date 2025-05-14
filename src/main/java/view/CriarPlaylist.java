@@ -5,6 +5,7 @@
 package view;
 
 import DAO.Criarplclss;
+import DAO.InserirHistorico;
 import DAO.ListaPlaylist;
 import model.Playlist;
 
@@ -136,7 +137,7 @@ public class CriarPlaylist extends javax.swing.JFrame {
       javax.swing.JOptionPane.showMessageDialog(null, "Playlist criada com sucesso!");
       
       
-      
+      InserirHistorico.registrarAcao("Criou a nova playlist: " + nomePlaylist);
 
 
   

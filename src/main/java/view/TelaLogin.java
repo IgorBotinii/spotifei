@@ -4,6 +4,8 @@
  */
 package view;
 
+import DAO.InserirHistorico;
+
 /**
  *
  * @author igorb
@@ -164,6 +166,9 @@ public class TelaLogin extends javax.swing.JFrame {
         TelaInicial inicial = new TelaInicial();
         inicial.setLocationRelativeTo(null);
         inicial.setVisible(true);
+        
+               InserirHistorico.registrarAcao("O Usuario: " + usuario + " acessou o sistema");
+
 
         } else {
         javax.swing.JOptionPane.showMessageDialog(this, "Usuário ou Senha incorretos!");

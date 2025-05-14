@@ -4,6 +4,8 @@
  */
 package view;
 
+import DAO.InserirHistorico;
+
 /**
  *
  * @author igorb
@@ -32,6 +34,7 @@ public class TelaInicial extends javax.swing.JFrame {
         BotaoVerMusicas = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         BotaoVerPlaylists = new javax.swing.JButton();
+        BotaoVerMusicasCurtidas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,7 +63,7 @@ public class TelaInicial extends javax.swing.JFrame {
         });
 
         jButton3.setBackground(new java.awt.Color(51, 255, 51));
-        jButton3.setText("Ver Musicas Curtidas");
+        jButton3.setText("Ver Historico");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -75,6 +78,14 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
+        BotaoVerMusicasCurtidas.setBackground(new java.awt.Color(51, 255, 51));
+        BotaoVerMusicasCurtidas.setText("Ver Musicas Curtidas");
+        BotaoVerMusicasCurtidas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoVerMusicasCurtidasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -83,10 +94,11 @@ public class TelaInicial extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(102, 102, 102)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoVerPlaylists, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoVerMusicas, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BotaoVerMusicasCurtidas, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(117, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -97,9 +109,11 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addComponent(BotaoVerMusicas, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BotaoVerPlaylists, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
+                .addGap(18, 18, 18)
+                .addComponent(BotaoVerMusicasCurtidas, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
@@ -120,10 +134,16 @@ public class TelaInicial extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        dispose();
         TelaLogin telalogin = new TelaLogin();
         telalogin.setLocationRelativeTo(null);
         telalogin.setVisible(true);
+        InserirHistorico.registrarAcao("O Usuario saiu do sistema");
+
+        dispose();
+
+        
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void BotaoVerMusicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoVerMusicasActionPerformed
@@ -149,6 +169,15 @@ public class TelaInicial extends javax.swing.JFrame {
         telaplls.setVisible(true);
         dispose();
     }//GEN-LAST:event_BotaoVerPlaylistsActionPerformed
+
+    private void BotaoVerMusicasCurtidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoVerMusicasCurtidasActionPerformed
+        // TODO add your handling code here:
+        
+        MusicasCurtidas msclike = new MusicasCurtidas();
+        msclike.setLocationRelativeTo(null);
+        msclike.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_BotaoVerMusicasCurtidasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -187,6 +216,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoVerMusicas;
+    private javax.swing.JButton BotaoVerMusicasCurtidas;
     private javax.swing.JButton BotaoVerPlaylists;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;

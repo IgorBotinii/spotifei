@@ -6,6 +6,7 @@ package view;
 import view.MusicasCurtidas;
 import model.LkMusic;
 import DAO.DescurtirMusica;
+import DAO.InserirHistorico;
 
 
 /**
@@ -162,6 +163,8 @@ public DetalheMusicCurtida(){
            dao.descurtirMusicaCL(musica);
            telaPrincipal.carregarTabelaMusicasCurtidas();  
            dispose();
+           InserirHistorico.registrarAcao("Descurtiu a musica: " + nome);
+
 
 
     }//GEN-LAST:event_BotaoDescurtirMusicaActionPerformed
