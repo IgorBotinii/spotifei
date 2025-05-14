@@ -4,6 +4,8 @@
  */
 package view;
 
+import DAO.CarregarHist;
+
 /**
  *
  * @author igorb
@@ -15,6 +17,12 @@ public class TelaConsultHist extends javax.swing.JFrame {
      */
     public TelaConsultHist() {
         initComponents();
+        CarregarHist dao = new CarregarHist();
+        dao.carregarHistorico(tabelaHistorico);
+        
+         tabelaHistorico.getColumnModel().getColumn(0).setPreferredWidth(50);  // ID
+    tabelaHistorico.getColumnModel().getColumn(1).setPreferredWidth(100); // Data
+    tabelaHistorico.getColumnModel().getColumn(2).setPreferredWidth(400); // Ação
     }
 
     /**
@@ -29,7 +37,7 @@ public class TelaConsultHist extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaHistorico = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        BotaoFecharTelaHist = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,8 +56,13 @@ public class TelaConsultHist extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabelaHistorico);
 
-        jButton1.setBackground(new java.awt.Color(255, 0, 0));
-        jButton1.setText("X");
+        BotaoFecharTelaHist.setBackground(new java.awt.Color(255, 0, 0));
+        BotaoFecharTelaHist.setText("X");
+        BotaoFecharTelaHist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoFecharTelaHistActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -58,14 +71,14 @@ public class TelaConsultHist extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotaoFecharTelaHist, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotaoFecharTelaHist, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -83,6 +96,15 @@ public class TelaConsultHist extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotaoFecharTelaHistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoFecharTelaHistActionPerformed
+        // TODO add your handling code here:
+        
+        TelaInicial telinit = new TelaInicial();
+        telinit.setLocationRelativeTo(null);
+        telinit.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_BotaoFecharTelaHistActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,7 +142,7 @@ public class TelaConsultHist extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton BotaoFecharTelaHist;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabelaHistorico;

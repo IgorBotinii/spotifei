@@ -32,7 +32,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         BotaoVerMusicas = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        BotaoVerHist = new javax.swing.JButton();
         BotaoVerPlaylists = new javax.swing.JButton();
         BotaoVerMusicasCurtidas = new javax.swing.JButton();
 
@@ -62,11 +62,11 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(51, 255, 51));
-        jButton3.setText("Ver Historico");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        BotaoVerHist.setBackground(new java.awt.Color(51, 255, 51));
+        BotaoVerHist.setText("Ver Historico");
+        BotaoVerHist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                BotaoVerHistActionPerformed(evt);
             }
         });
 
@@ -94,7 +94,7 @@ public class TelaInicial extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(102, 102, 102)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotaoVerHist, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoVerPlaylists, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoVerMusicas, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -112,7 +112,7 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(BotaoVerMusicasCurtidas, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotaoVerHist, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
@@ -154,12 +154,14 @@ public class TelaInicial extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_BotaoVerMusicasActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-         MusicasCurtidas telamusicascurtidas = new MusicasCurtidas();
-        telamusicascurtidas.setLocationRelativeTo(null);
-        telamusicascurtidas.setVisible(true);
+    private void BotaoVerHistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoVerHistActionPerformed
+         TelaConsultHist hist = new TelaConsultHist();
+        hist.setLocationRelativeTo(null);
+        hist.setVisible(true);
+        InserirHistorico.registrarAcao("Consultou o historico");
+
         dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_BotaoVerHistActionPerformed
 
     private void BotaoVerPlaylistsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoVerPlaylistsActionPerformed
         // TODO add your handling code here:
@@ -215,11 +217,11 @@ public class TelaInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotaoVerHist;
     private javax.swing.JButton BotaoVerMusicas;
     private javax.swing.JButton BotaoVerMusicasCurtidas;
     private javax.swing.JButton BotaoVerPlaylists;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
