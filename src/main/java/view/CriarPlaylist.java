@@ -149,6 +149,8 @@ public class CriarPlaylist extends javax.swing.JFrame {
         TelaPlaylistsGerais telpss = new TelaPlaylistsGerais();
         telpss.setLocationRelativeTo(null);
         telpss.setVisible(true);
+        dispose();
+
 
 
     }//GEN-LAST:event_BotCancel_cadActionPerformed

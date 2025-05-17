@@ -10,11 +10,15 @@ package view;
  */
 
 import DAO.AddNovMusicPlaylistSelect;
+import DAO.DescurtirMusica;
 import DAO.ExcluirMusicaPlaylist;
+import DAO.ExcluirPlaylist;
 import DAO.InserirHistorico;
 import DAO.ListaMusicasPlaylistSelect;
 import DAO.MusicaDao;
 import java.awt.event.ActionEvent;
+import model.LkMusic;
+import model.Playlist;
 public class TelaColocarMusicaPlaylist extends javax.swing.JFrame {
 
 public TelaColocarMusicaPlaylist(String nomePlaylist) {
@@ -80,6 +84,7 @@ public TelaColocarMusicaPlaylist() {
         jLabel5 = new javax.swing.JLabel();
         BoxPlayListSelecionada = new javax.swing.JTextField();
         BotaoRemoverPlaylist = new javax.swing.JButton();
+        BotaoExcluirPlaylist = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -159,6 +164,16 @@ public TelaColocarMusicaPlaylist() {
             }
         });
 
+        BotaoExcluirPlaylist.setBackground(new java.awt.Color(255, 0, 51));
+        BotaoExcluirPlaylist.setForeground(new java.awt.Color(255, 255, 255));
+        BotaoExcluirPlaylist.setText("Excluir Playlist");
+        BotaoExcluirPlaylist.setToolTipText("");
+        BotaoExcluirPlaylist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoExcluirPlaylistActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -181,7 +196,9 @@ public TelaColocarMusicaPlaylist() {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BoxPlayListSelecionada, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BotaoExcluirPlaylist)
+                .addGap(14, 14, 14))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -197,11 +214,16 @@ public TelaColocarMusicaPlaylist() {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(BoxPlayListSelecionada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(BoxPlayListSelecionada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(BotaoExcluirPlaylist)))
                 .addGap(17, 17, 17)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -282,6 +304,27 @@ public TelaColocarMusicaPlaylist() {
         
     }//GEN-LAST:event_BotaoCancelAddPllActionPerformed
 
+    private void BotaoExcluirPlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoExcluirPlaylistActionPerformed
+        // TODO add your handling code here:
+        
+            String nome = BoxPlayListSelecionada.getText();
+        
+
+           Playlist pll = new Playlist(nome);
+           ExcluirPlaylist dao = new ExcluirPlaylist();
+           dao.DeletarPlayList(pll);
+                       
+           
+
+           InserirHistorico.registrarAcao("Exclui a playlist: " + nome);
+           
+        TelaPlaylistsGerais telapllg = new TelaPlaylistsGerais();
+        telapllg.setLocationRelativeTo(null);
+        telapllg.setVisible(true);
+        dispose();
+
+    }//GEN-LAST:event_BotaoExcluirPlaylistActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -321,6 +364,7 @@ public TelaColocarMusicaPlaylist() {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoAdicionarMusicaPlaylist;
     private javax.swing.JButton BotaoCancelAddPll;
+    private javax.swing.JButton BotaoExcluirPlaylist;
     private javax.swing.JButton BotaoRemoverPlaylist;
     private javax.swing.JTextField BoxMusicaSelecionada;
     private javax.swing.JTextField BoxPlayListSelecionada;
