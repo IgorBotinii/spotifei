@@ -1,0 +1,57 @@
+----Comandos para criar as tabelas no banco de dados----
+
+---Criando banco de dados------
+CREATE database db_spotifei; (cria o banco de dados_
+
+---- Criando tabela de usuários ------
+create table cd_usuarios(
+cod_user serial primary key,
+nome_user varchar(50),
+senha_user varchar(50),
+nome_comp_user varchar(120)
+)
+
+------ Criando tabela de musicas ---
+create table cd_musicas(
+cod_musica serial primary key,
+nome_musica varchar(50),
+artista varchar(50),
+genero varchar(40),
+tempo_total_musica varchar(20),
+data_lancamento date
+)
+
+---------Criando tabela de musicas curtidas---------
+create table cd_musicas_curtidas(
+cod_musica serial primary key,
+nome_musica varchar(120),
+artista varchar(40),
+genero varchar(40),
+tempo_total_musica varchar(20),
+data_lancamento varchar(19)
+)
+
+
+-------- Criando tabela de cadastrar playlists------------
+create table playlists(
+id SERIAL primary key,
+nome varchar(100)
+)
+
+----Criando a tabela onde sera vinculada a musica a playlist----
+
+
+create table playlist_musicas(
+id serial primary key,
+nome_musica varchar(120),
+nome_playlist varchar(120)
+)
+
+
+---------- Criando tabela de histórico -------
+create table historico(
+id SERIAL primary key,
+data_mudanca date,
+acao varchar(255)
+)
+
