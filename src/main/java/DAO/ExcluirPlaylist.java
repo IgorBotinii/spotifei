@@ -14,21 +14,30 @@ import model.Playlist;
 
 public class ExcluirPlaylist {
     
- public void DeletarPlayList(Playlist pllgerais) {
-    String sql = "DELETE FROM playlists WHERE nome = ?";
+public void DeletarPlayList(Playlist pllgerais) {
+    String deletarMusicas = "DELETE FROM playlist_musicas WHERE nome_playlist = ?";
+    String deletarPlaylist = "DELETE FROM playlists WHERE nome = ?";
 
-    try (Connection conn = ConectarDB.conectar();
-         PreparedStatement insertStmt = conn.prepareStatement(sql)) {
+    try (Connection conn = ConectarDB.conectar()) {
 
-        insertStmt.setString(1, pllgerais.getNome());
-        insertStmt.executeUpdate();
+        try (PreparedStatement stmtMusicas = conn.prepareStatement(deletarMusicas)) {
+            stmtMusicas.setString(1, pllgerais.getNome());
+            stmtMusicas.executeUpdate();
+        }
 
-        JOptionPane.showMessageDialog(null, "Playlist excluída com sucesso!");
+       
+        try (PreparedStatement stmtPlaylist = conn.prepareStatement(deletarPlaylist)) {
+            stmtPlaylist.setString(1, pllgerais.getNome());
+            stmtPlaylist.executeUpdate();
+        }
+
+        JOptionPane.showMessageDialog(null, "Playlist Excluida com Sucesso!");
 
     } catch (SQLException e) {
         System.err.println("Erro ao excluir playlist:");
         e.printStackTrace();
     }
 }
+
 
 }
