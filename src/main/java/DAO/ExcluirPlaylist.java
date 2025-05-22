@@ -25,7 +25,6 @@ public void DeletarPlayList(Playlist pllgerais) {
             stmtMusicas.executeUpdate();
         }
 
-       
         try (PreparedStatement stmtPlaylist = conn.prepareStatement(deletarPlaylist)) {
             stmtPlaylist.setString(1, pllgerais.getNome());
             stmtPlaylist.executeUpdate();
